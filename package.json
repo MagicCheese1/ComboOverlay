@@ -1,0 +1,36 @@
+{
+  "name": "combooverlay",
+  "version": "1.0.0",
+  "description": "An overlay for games to show you combos",
+  "main": "Main.js",
+  "scripts": {
+    "start": "Electron .",
+    "build": "electron-packager . ComboOverlay --platform win32 --arch x64 --out dist/ --overwrite",
+    "setup": "electron-installer-windows --src dist/ComboOverlay-win32-x64/ --dest dist/installers/"
+  },
+  "author": "Kacper Płażewski",
+  "license": "MIT",
+  "devDependencies": {
+    "electron-packager": "^14.2.1",
+    "electron-installer-windows": "^3.0.0",
+    "electron": "8.3.0"
+  },
+  "iohook": {
+    "targets": [
+      "node-72",
+      "electron-76"
+    ],
+    "platforms": [
+      "win32",
+      "darwin",
+      "linux"
+    ],
+    "arches": [
+      "x64",
+      "ia32"
+    ]
+  },
+  "dependencies": {
+    "iohook": "^0.6.5"
+  }
+}
